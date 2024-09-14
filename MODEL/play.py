@@ -75,7 +75,7 @@ def runner():
     # cvo.cv2.destroyAllWindows()
     return
 
-runner()
-cvo.cap.release()
-cvo.cv2.destroyAllWindows()
+
+# cvo.cap.release()
+# cvo.cv2.destroyAllWindows()
     
