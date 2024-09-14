@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import Background from "./background";
 import axios from "axios";
 import { useEffect } from "react";
+// import { useemailContext } from "./customerSignIn";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // import { useNavigate } from "react-router-dom";
 
 function Shop(props) {
+  // const [mailState, setMailState] = useemailContext();
   // axios.get("http://localhost:8000/api/users/true/").then((res) => {
   //   console.log(res.data);
   // });
@@ -31,15 +33,20 @@ function Shop(props) {
       <Card
         // className="bg-blue-100"
         // bg="bg-green-100"
-        style={{ width: "18rem", marginRight: 20, background: "aqua" }}
+        style={{
+          height: "20rem",
+          width: "18rem",
+          marginRight: 20,
+          background: "aqua",
+        }}
       >
         <Card.Body>
-          <Card.Title className="text-3xl font-bold">
+          <Card.Title className="text-5xl font-bold">
             {`${props.shopName}`}
           </Card.Title>
-          <Card.Text className="4xl">{`🌟${props.shopRating}`}</Card.Text>
-          <Card.Text className="2xl">Opens: 8 AM</Card.Text>
-          <Card.Text className="2xl">Closes: 8 PM</Card.Text>
+          <Card.Text className="text-4xl">{`🌟${props.shopRating}`}</Card.Text>
+          <Card.Text className="text-2xl">Opens: 8 AM</Card.Text>
+          <Card.Text className="text-2xl">Closes: 8 PM</Card.Text>
           {props.isAvailable ? (
             <div className="mb-2">
               <Card.Title className="text-2xl font-bold">{`Status: Availaible `}</Card.Title>
@@ -48,7 +55,7 @@ function Shop(props) {
             <div className="">
               <Card.Title className="text-2xl font-bold">{`Status: Not Availaible `}</Card.Title>
 
-              <Button onClick={joinQueue} variant="primary">
+              <Button onClick={() => joinQueue} variant="primary">
                 Join Virtual Queue
               </Button>
             </div>
@@ -63,7 +70,21 @@ function Shop(props) {
   );
 }
 
-const joinQueue = () => {};
+const joinQueue = () => {
+  console.log(mailState);
+  // axios.post("");
+  // axios
+  //   .post(
+  //     `http://localhost:8000/`,
+  //     // { mode: "no-cors" },
+  //     { mailState }
+  //   )
+  //   .then((res) => {
+  //     console.log(formData);
+  //     console.log(res);
+  //     console.log(res.data);
+  //   });
+};
 
 export default Shop;
 

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-// import Shop from "./Shop";
+import Shop from "./Shop";
 
-// import Signup from "./Signup";
+import Signup from "./Signup";
 import "./Home.css";
 import Grid from "./Grid";
-// import { Link, Router } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Background from "./background";
 

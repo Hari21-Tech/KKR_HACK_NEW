@@ -15,7 +15,9 @@ def get_users(request):
 
 @api_view(['POST'])
 def create_user(request):
-    serializer = UserSerializer(data=request.data)
+    serializer = UserSerializer(data=request.data['formData'])
+    print(serializer)
+    # print(request.data['formData'])
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)

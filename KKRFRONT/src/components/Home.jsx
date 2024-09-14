@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-// import Shop from "./Shop";
+import Shop from "./Shop";
 
-// import Signup from "./Signup";
+import Signup from "./Signup";
 import "./Home.css";
-// import Grid from "./Grid";
+import Grid from "./Grid";
 import { Link, Router } from "react-router-dom";
-// import Particles from "@tsparticles/react";
+import Particles from "@tsparticles/react";
 import Background from "./background";
 import { Card } from "react-bootstrap";
-// import axios from "axios";
+import axios from "axios";
 
 class Header extends Component {
   state = {

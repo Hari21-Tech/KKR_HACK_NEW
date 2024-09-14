@@ -15,11 +15,11 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 // import App from "./App.jsx";
 // import { Route, Router, Routes } from "react-router-dom";
-// import Signup from "./components/Signup.jsx";
 import Shops from "./components/Shops.jsx";
 import Store from "./components/Store.jsx";
 import Home from "./components/Home.jsx";
 import "./index.css";
+import CustomerSignIn from "./components/customerSignIn.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -29,6 +29,7 @@ createRoot(document.getElementById("root")).render(
           <Route exact path="/" element={<Home />} />
           <Route exact path="/shops" element={<Shops />} />
           <Route exact path="/about" element={<Store />} />
+          <Route exact path="/customersign" element={<CustomerSignIn />} />
           {/* <Route exact path="/about" element={<About />} /> */}
           {/* <Route exact path="/user" element={<User />} /> */}
         </Routes>

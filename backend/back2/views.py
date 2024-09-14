@@ -15,7 +15,8 @@ def get_shop(request):
 
 @api_view(['POST'])
 def create_shop(request):
-    serializer = UserSerializer(data=request.data)
+    serializer = UserSerializer(data=request.data['formData'])
+    print(serializer)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
