@@ -5,9 +5,12 @@ import Shop from "./Shop";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function Grid() {
   const [shop, setShop] = useState([]);
+  const navigate = useNavigate();
 
   const getShop = () => {
     axios.get("http://127.0.0.1:8000/shop/show").then((res) => {
@@ -18,6 +21,11 @@ function Grid() {
       // this.setState({ people });
       setShop(shop);
     });
+  };
+
+  const askForEmail = () => {
+    // console.log("qejnfq");
+    navigate("/shops/joinQueue");
   };
 
   useEffect(() => getShop(), []);
@@ -57,11 +65,16 @@ function Grid() {
                     </Card.Title>
                     {/* <Card.Title className="text-5xl font-bold"></Card.Title> */}
                     <Card.Text className="text-4xl">{`🌟${shop.rating}`}</Card.Text>
-                    <Card.Text className="text-2xl">{`Opening Time: ${shop.open_t}`}</Card.Text>
-                    <Card.Text className="text-2xl">{` Closing Time: ${shop.close_t}`}</Card.Text>
+                    <Card.Text className="text-2xl">{`Opens:  ${shop.open_t} AM`}</Card.Text>
+                    <Card.Text className="text-2xl">{` Closes:  ${shop.close_t} PM`}</Card.Text>
                     {/* <Link to="/" /> <button>Home</button> */}
                     {/* <Link to="/about">
           </Link> */}
+                    <Card.Text>
+                      <Button onClick={askForEmail} style={{ marginTop: 30 }}>
+                        Join the virtual queue
+                      </Button>
+                    </Card.Text>
                   </Card.Body>
                 </Card>
               );

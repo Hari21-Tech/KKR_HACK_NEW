@@ -71,7 +71,7 @@ function Shop(props) {
 }
 
 const joinQueue = () => {
-  console.log(mailState);
+  console.log("eqjiwe");
   // axios.post("");
   // axios
   //   .post(

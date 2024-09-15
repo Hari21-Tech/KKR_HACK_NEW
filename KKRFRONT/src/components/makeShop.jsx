@@ -80,10 +80,14 @@ const MakeShop = () => {
       {/* <Background /> */}
 
       <div className="signup-form">
-        <h2 className="mb-3">Enter Shop Details</h2>
+        <h2 style={{ color: "white" }} className="mb-3">
+          Enter Shop Details
+        </h2>
 
         {submitted && (
-          <div className="success-message">Sign Up Successful!</div>
+          <div style={{ color: "white" }} className="success-message">
+            Sign Up Successful!
+          </div>
         )}
         <form onSubmit={handleSubmit}>
           {/* <div>
@@ -98,7 +102,7 @@ const MakeShop = () => {
           </div> */}
 
           <div>
-            <label>Shop Name</label>
+            <label style={{ color: "white" }}>Shop Name</label>
             <input
               type="text"
               name="name"
@@ -108,7 +112,7 @@ const MakeShop = () => {
             {/* {errors.a && <span className="error">{errors.a}</span>} */}
           </div>
           <div>
-            <label>Opening Time</label>
+            <label style={{ color: "white" }}>Opening Time</label>
             <input
               type="number"
               name="open_t"
@@ -118,7 +122,7 @@ const MakeShop = () => {
             {/* {errors.a && <span className="error">{errors.a}</span>} */}
           </div>
           <div>
-            <label>Closing Time</label>
+            <label style={{ color: "white" }}>Closing Time</label>
             <input
               type="number"
               name="close_t"
@@ -128,7 +132,7 @@ const MakeShop = () => {
             {/* {errors.a && <span className="error">{errors.a}</span>} */}
           </div>
           <div>
-            <label>Rating</label>
+            <label style={{ color: "white" }}>Rating</label>
             <input
               type="number"
               name="rating"
@@ -137,8 +141,8 @@ const MakeShop = () => {
             />
             {/* {errors.a && <span className="error">{errors.a}</span>} */}
           </div>
-          <div>
-            (In)
+          <div style={{ color: "white" }}>
+            (In sq meters)
             <label>Area</label>
             <input
               type="number"
@@ -164,7 +168,9 @@ const MakeShop = () => {
             <Button variant="secondary">Sign In</Button>
           </Link> */}
 
-          <button type="submit">Submit</button>
+          <button style={{ color: "white" }} type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>

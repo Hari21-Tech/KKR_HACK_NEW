@@ -118,9 +118,7 @@ const BusinessSignUp = () => {
             </div>
             {/* <Link to="/business"> */}
             {/* <button type="submit">Sign Up</button> */}
-            <Button variant="secondary">
-              Sign Up
-            </Button>
+            <Button variant="secondary">Sign Up</Button>
             {/* </Link> */}
           </form>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, createContext, useContext } from "react";
-import "./customerSignUp.css";
+// import "./customerSignIn.css";
 import { Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Background from "./background";
 import axios from "axios";
 
@@ -20,6 +20,13 @@ import axios from "axios";
 // export const useemailContext = () => createContext(emailContext);
 
 const CustomerSignIn = () => {
+  const navigate = useNavigate();
+  // navigate("/shops");
+
+  const handleRedirect = () => {
+    navigate("/shops");
+  };
+
   const [formData, setFormData] = useState({
     // name: "",
     email: "",
@@ -73,10 +80,11 @@ const CustomerSignIn = () => {
         .post(
           `http://localhost:8000/user/register/`,
           // { mode: "no-cors" },
-          { formData }
+          formData
         )
         .then((res) => {
           console.log(formData);
+          navigate("/shops");
           console.log(res);
           console.log(res.data);
         });
@@ -93,9 +101,11 @@ const CustomerSignIn = () => {
       {/* <Background /> */}
 
       <div className="signup-form">
-        <h2>Sign In</h2>
+        <h2 style={{ color: "white", marginBottom: 20 }}>Sign In</h2>
         {submitted && (
-          <div className="success-message">Sign In Successful!</div>
+          <div style={{ color: "white" }} className="success-message">
+            Sign In Successful!
+          </div>
         )}
         <form onSubmit={handleSubmit}>
           {/* <div>
@@ -110,25 +120,25 @@ const CustomerSignIn = () => {
           </div> */}
 
           <div>
-            <label>Email</label>
+            <label style={{ color: "white" }}>Email</label>
             <input
               type="email"
               name="email"
-              value={formData.a}
+              value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && <span className="error">{errors.email}</span>}
+            {/* {errors.email && <span className="error">{errors.email}</span>} */}
           </div>
 
           <div>
-            <label>Password</label>
+            <label style={{ color: "white" }}>Password</label>
             <input
               type="passd"
               name="passd"
               value={formData.passd}
               onChange={handleChange}
             />
-            {errors.passd && <span className="error">{errors.passd}</span>}
+            {/* {errors.passd && <span className="error">{errors.passd}</span>} */}
           </div>
 
           {/* <div>
@@ -147,7 +157,9 @@ const CustomerSignIn = () => {
             <Button variant="secondary">Sign In</Button>
           </Link> */}
 
-          <button type="submit">Sign In</button>
+          <button style={{ color: "white" }} type="submit">
+            Sign In
+          </button>
         </form>
       </div>
     </div>
